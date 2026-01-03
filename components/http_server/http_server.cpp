@@ -17,6 +17,8 @@
 #include <string_view>
 #include <vector>
 
+#include "sdkconfig.h"
+
 extern "C"
 {
 #include "freertos/FreeRTOS.h"
@@ -31,8 +33,6 @@ extern "C"
 #include "esp_littlefs.h"
 #endif
 } // extern "C"
-
-#include "sdkconfig.h"
 
 #include "http_pages.hpp"
 #include "http_server.hpp"

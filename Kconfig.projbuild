@@ -1,0 +1,30 @@
+menu "Filesystem mount point"
+
+config HTTP_SERVER_ENABLE_LITTLEFS
+    bool "Enable LittleFS support for HTTP server"
+    default y
+    help
+        Enable serving files from a LittleFS filesystem.
+
+        When disabled, the HTTP server will only serve embedded
+        resources and will not depend on LittleFS.
+
+if HTTP_SERVER_ENABLE_LITTLEFS
+
+config HTTP_SERVER_LITTLEFS_MOUNT
+    string "Mount point for LittleFS"
+    default "/littlefs"
+    help
+        Internal LittleFS mount point used by the HTTP server.
+        Must start with '/'.
+
+config HTTP_SERVER_LITTLEFS_LABEL
+    string "LittleFS partition label"
+    default "littlefs"
+    help
+        Partition label passed to the LittleFS driver.
+        Do not include a leading '/'.
+
+endif # HTTP_SERVER_ENABLE_LITTLEFS
+
+endmenu

@@ -1,0 +1,67 @@
+# ESP-IDF Component Manager manifest for ESP-IDF_Web-Server (http_server)
+# This file is intended for publishing this component, or for managed builds.
+
+name: "http_server"
+version: "1.0.0"
+description: "An embedded HTTP server wrapping server lifecycle management, filesystem-backed static file serving, and handler registration into a small, thread-safe interface on top of the native ESP-IDF `esp_http_server` API. It is suitable for use in system services, provisioning flows, and device configuration UIs."
+url: "https://github.com/lbussy/ESP-IDF_Web-Server"
+repository: "https://github.com/lbussy/ESP-IDF_Web-Server.git"
+license: "MIT"
+documentation: "https://github.com/lbussy/ESP-IDF_Web-Server/blob/main/README.md"
+issues: "https://github.com/lbussy/ESP-IDF_Web-Server/issues"
+
+maintainers:
+  - Lee Bussy <Lee@Bussy.org>
+
+tags:
+  - http
+  - esp32
+  - esp-idf
+  - esp_http_server
+  - littlefs
+
+examples:
+  - path: examples/basic
+
+dependencies:
+  # ESP-IDF version compatibility for this component.
+  idf:
+    ">=5.5.1,<5.6.0"
+
+files:
+  exclude:
+    # Example app build outputs and generated configs.
+    - "examples/**/build/**"
+    - "examples/**/build_*_*/**"
+    - "examples/**/sdkconfig"
+    - "examples/**/sdkconfig.old"
+    - "examples/**/managed_components/**"
+    - "examples/**/dependencies.lock"
+
+    # Optional internal test apps (if present).
+    - "test_apps/**/build/**"
+    - "test_apps/**/build_*_*/**"
+    - "test_apps/**/sdkconfig"
+    - "test_apps/**/sdkconfig.old"
+    - "test_apps/**/managed_components/**"
+    - "test_apps/**/dependencies.lock"
+
+    # Docs build outputs.
+    - "docs/_build/**"
+    - "docs/doxygen_sqlite3.db"
+
+    # Coverage and test logs (if you generate them in-repo).
+    - "**/*.gcda"
+    - "**/*.gcno"
+    - "coverage_report/**"
+    - "TEST_LOGS/**"
+
+    # IDE/editor metadata (often excluded by default, but explicit is fine).
+    - "**/.vscode/**"
+    - "**/.idea/**"
+    - "**/.settings/**"
+
+    # macOS and caches (often excluded by default).
+    - "**/.DS_Store"
+    - "**/__pycache__/**"
+    - "**/*.pyc"

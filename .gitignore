@@ -1,0 +1,79 @@
+# -----------------------------------------------------------------------------
+# ESP-IDF component repository ignores.
+#
+# This repo is a reusable ESP-IDF component, not a standalone project.
+# We ignore per-user build outputs, generated configs, and tool/IDE metadata.
+# Example projects under examples/* build like normal ESP-IDF apps and produce
+# their own build/, sdkconfig, managed_components, and lock files.
+# -----------------------------------------------------------------------------
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Editor / IDE
+.vscode/
+.idea/
+.settings/
+.dir-locals.el
+*~
+.#*
+\#*#
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+.clangd
+
+# Tag databases
+GTAGS
+GRTAGS
+GPATH
+
+# Generic build artifacts
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+
+# ESP-IDF app artifacts (examples in a component repo).
+# Keep the component itself clean while allowing example apps to build normally.
+dist/
+examples/**/build/
+examples/**/build_*_*/
+examples/**/sdkconfig
+examples/**/sdkconfig.old
+examples/**/managed_components/
+examples/**/dependencies.lock
+
+# If you keep any internal test apps in the component repo.
+test_apps/**/build/
+test_apps/**/build_*_*/
+test_apps/**/sdkconfig
+test_apps/**/sdkconfig.old
+test_apps/**/managed_components/
+test_apps/**/dependencies.lock
+
+# Coverage / test logs
+*.gcda
+*.gcno
+coverage.info
+coverage_report/
+pytest-embedded/
+pytest_embedded_log/
+TEST_LOGS/
+XUNIT_RESULT*.xml
+build_summary_*.xml
+
+# Docs build artifacts
+docs/_build/
+docs/doxygen_sqlite3.db
+
+# Vale (if used)
+.vale/styles/*

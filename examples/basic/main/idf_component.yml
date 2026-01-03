@@ -4,5 +4,5 @@
 # export HTTP_SERVER_LOCAL_DEV=1
 # And comment the version the example/main/idf_component.yml
 dependencies:
-  lbussy/http_server: "^1.0.1"
+  lbussy/http_server: "^1.0.2"
   idf: ">=5.5"

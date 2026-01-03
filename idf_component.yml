@@ -2,7 +2,7 @@
 # This file is intended for publishing this component, or for managed builds.
 
 name: "http_server"
-version: "1.0.0"
+version: "1.0.1"
 description: "An embedded HTTP server wrapping server lifecycle management, filesystem-backed static file serving, and handler registration into a small, thread-safe interface on top of the native ESP-IDF `esp_http_server` API. It is suitable for use in system services, provisioning flows, and device configuration UIs."
 url: "https://github.com/lbussy/ESP-IDF_Web-Server"
 repository: "https://github.com/lbussy/ESP-IDF_Web-Server.git"
@@ -12,6 +12,14 @@ issues: "https://github.com/lbussy/ESP-IDF_Web-Server/issues"
 
 maintainers:
   - Lee Bussy <Lee@Bussy.org>
+
+targets:
+  - esp32
+  - esp32s2
+  - esp32s3
+  - esp32c3
+  - esp32c6
+  - esp32h2
 
 tags:
   - http
@@ -30,6 +38,11 @@ dependencies:
 
 files:
   exclude:
+    # Component Manager / build artifacts
+    - "dist/**"
+    - "build/**"
+    - "sdkconfig"
+
     # Example app build outputs and generated configs.
     - "examples/**/build/**"
     - "examples/**/build_*_*/**"

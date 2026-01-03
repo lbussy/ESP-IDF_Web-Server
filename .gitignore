@@ -45,6 +45,8 @@ GPATH
 # ESP-IDF app artifacts (examples in a component repo).
 # Keep the component itself clean while allowing example apps to build normally.
 dist/
+build/
+sdkconfig
 examples/**/build/
 examples/**/build_*_*/
 examples/**/sdkconfig

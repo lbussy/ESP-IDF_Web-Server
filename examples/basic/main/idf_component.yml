@@ -1,4 +1,8 @@
 # IDF Component Manager manifest for the example's "main" component
+
+# If you want the example to use the component from the local repo
+# export HTTP_SERVER_LOCAL_DEV=1
+# And comment the version the example/main/idf_component.yml
 dependencies:
-  lbussy/http_server: "^1.0.0"
+  lbussy/http_server: "^1.0.1"
   idf: ">=5.5"

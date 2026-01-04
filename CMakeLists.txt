@@ -1,6 +1,12 @@
-cmake_minimum_required(VERSION 3.16)
+set(priv_requires "")
 
-set(EXTRA_COMPONENT_DIRS ${CMAKE_CURRENT_LIST_DIR}/components)
+if(CONFIG_HTTP_SERVER_ENABLE_LITTLEFS)
+    list(APPEND priv_requires joltwallet__littlefs)
+endif()
 
-include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-project(http_server_validation)
+idf_component_register(
+    SRCS "http_server.cpp"
+    INCLUDE_DIRS "include"
+    REQUIRES esp_http_server
+    PRIV_REQUIRES ${priv_requires}
+)

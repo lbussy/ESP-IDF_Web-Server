@@ -2,7 +2,7 @@
 # This file is intended for publishing this component, or for managed builds.
 
 name: "http_server"
-version: "1.0.2"
+version: "1.0.3"
 description: "An embedded HTTP server wrapping server lifecycle management, filesystem-backed static file serving, and handler registration into a small, thread-safe interface on top of the native ESP-IDF `esp_http_server` API. It is suitable for use in system services, provisioning flows, and device configuration UIs."
 url: "https://github.com/lbussy/ESP-IDF_Web-Server"
 repository: "https://github.com/lbussy/ESP-IDF_Web-Server.git"

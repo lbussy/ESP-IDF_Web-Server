@@ -32,6 +32,9 @@ dependencies:
   # ESP-IDF version compatibility for this component.
   idf:
     ">=5.5.1,<5.6.0"
+  joltwallet/littlefs:
+    version: "*"
+    require: private
 
 files:
   exclude:
